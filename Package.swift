@@ -10,12 +10,12 @@ let package = Package(
         .watchOS(.v4),
     ],
     products: [
-        .executable(name: "rswift", targets: ["rswift"]),
+//        .executable(name: "rswift", targets: ["rswift"]),
         .library(name: "RswiftLibrary", targets: ["RswiftResources"]),
-        .plugin(name: "RswiftGenerateInternalResources", targets: ["RswiftGenerateInternalResources"]),
-        .plugin(name: "RswiftGeneratePublicResources", targets: ["RswiftGeneratePublicResources"]),
-        .plugin(name: "RswiftGenerateResourcesCommand", targets: ["RswiftGenerateResourcesCommand"]),
-        .plugin(name: "RswiftModifyXcodePackages", targets: ["RswiftModifyXcodePackages"]),
+//        .plugin(name: "RswiftGenerateInternalResources", targets: ["RswiftGenerateInternalResources"]),
+//        .plugin(name: "RswiftGeneratePublicResources", targets: ["RswiftGeneratePublicResources"]),
+//        .plugin(name: "RswiftGenerateResourcesCommand", targets: ["RswiftGenerateResourcesCommand"]),
+//        .plugin(name: "RswiftModifyXcodePackages", targets: ["RswiftModifyXcodePackages"]),
     ],
     dependencies: [
         .package(url: "https://github.com/tomlokhorst/XcodeEdit", from: "2.9.0"),
