@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -30,39 +30,39 @@ let package = Package(
         .testTarget(name: "RswiftParsersTests", dependencies: ["RswiftParsers"]),
 
         // Executable that brings all previous parts together
-        .executableTarget(name: "rswift", dependencies: [
-            .target(name: "RswiftParsers"),
-            .target(name: "RswiftGenerators"),
-            .product(name: "ArgumentParser", package: "swift-argument-parser"),
-        ]),
+//        .executableTarget(name: "rswift", dependencies: [
+//            .target(name: "RswiftParsers"),
+//            .target(name: "RswiftGenerators"),
+//            .product(name: "ArgumentParser", package: "swift-argument-parser"),
+//        ]),
 
-        .plugin(name: "RswiftGenerateInternalResources", capability: .buildTool(), dependencies: ["rswift"]),
-        .plugin(name: "RswiftGeneratePublicResources", capability: .buildTool(), dependencies: ["rswift"]),
-        .plugin(
-            name: "RswiftGenerateResourcesCommand",
-            capability: .command(
-                intent: .custom(
-                    verb: "rswift-generate-resources",
-                    description: "Rswift generate resources"
-                ),
-                permissions: [
-                    .writeToPackageDirectory(reason: "Rswift generates a file with statically typed, autocompleted resources")
-                ]
-            ),
-            dependencies: ["rswift"]
-        ),
-        .plugin(
-            name: "RswiftModifyXcodePackages",
-            capability: .command(
-                intent: .custom(
-                    verb: "rswift-modify-xcode-packages",
-                    description: "Rswift modify Xcode packages"
-                ),
-                permissions: [
-                    .writeToPackageDirectory(reason: "Modifies Xcode project to fix package reference for plugins")
-                ]
-            ),
-            dependencies: ["rswift"]
-        ),
+//        .plugin(name: "RswiftGenerateInternalResources", capability: .buildTool(), dependencies: ["rswift"]),
+//        .plugin(name: "RswiftGeneratePublicResources", capability: .buildTool(), dependencies: ["rswift"]),
+//        .plugin(
+//            name: "RswiftGenerateResourcesCommand",
+//            capability: .command(
+//                intent: .custom(
+//                    verb: "rswift-generate-resources",
+//                    description: "Rswift generate resources"
+//                ),
+//                permissions: [
+//                    .writeToPackageDirectory(reason: "Rswift generates a file with statically typed, autocompleted resources")
+//                ]
+//            ),
+//            dependencies: ["rswift"]
+//        ),
+//        .plugin(
+//            name: "RswiftModifyXcodePackages",
+//            capability: .command(
+//                intent: .custom(
+//                    verb: "rswift-modify-xcode-packages",
+//                    description: "Rswift modify Xcode packages"
+//                ),
+//                permissions: [
+//                    .writeToPackageDirectory(reason: "Modifies Xcode project to fix package reference for plugins")
+//                ]
+//            ),
+//            dependencies: ["rswift"]
+//        ),
     ]
 )
