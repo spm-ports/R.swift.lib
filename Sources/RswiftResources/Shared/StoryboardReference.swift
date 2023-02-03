@@ -56,7 +56,7 @@ public protocol NibReferenceContainer {
     var bundle: Bundle { get }
 }
 
-public protocol ReuseIdentifierContainer<Reusable> {
+public protocol ReuseIdentifierContainer {
     associatedtype Reusable
     var identifier: String { get }
 }
